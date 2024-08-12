@@ -1,0 +1,142 @@
+Sub ControlSim()
+    Dim i As Integer
+    Dim simulationCount As Integer
+    Dim outputColumn As Integer
+ 
+    simulationCount = 500
+    outputColumn = 17
+ 
+    Application.Calculation = xlCalculationManual
+ 
+    For i = 1 To simulationCount
+        Application.Calculate
+        
+        'Net Revenue'
+        
+        'Control'
+        Cells(outputColumn, 37).Value = Application.Evaluate("AH9")
+        '1%-10%'
+        Cells(outputColumn, 38).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AH$10, 0, 0, $F$3, 1)"))
+        '11%-20%'
+        Cells(outputColumn, 39).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AH$10, $F$3, 0, $F$3, 1)"))
+        '21%-30%'
+        Cells(outputColumn, 40).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AH$10, $F$3*2, 0, $F$3, 1)"))
+        '31%-40%'
+        Cells(outputColumn, 41).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AH$10, $F$3*3, 0, $F$3, 1)"))
+        '41%-50%'
+        Cells(outputColumn, 42).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AH$10, $F$3*4, 0, $F$3, 1)"))
+        '51%-60%'
+        Cells(outputColumn, 43).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AH$10, $F$3*5, 0, $F$3, 1)"))
+        '61%-70%'
+        Cells(outputColumn, 44).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AH$10, $F$3*6, 0, $F$3, 1)"))
+        '71%-80%'
+        Cells(outputColumn, 45).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AH$10, $F$3*7, 0, $F$3, 1)"))
+        '81%-90%'
+        Cells(outputColumn, 46).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AH$10, $F$3*8, 0, $F$3, 1)"))
+        '91%-100%'
+        Cells(outputColumn, 47).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AH$10, $F$3*9, 0, $F$3, 1)"))
+        
+        'Revenue'
+        
+        'Control'
+        Cells(outputColumn, 49).Value = Application.Evaluate("AF9")
+        '1%-10%'
+        Cells(outputColumn, 50).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AF$10, 0, 0, $F$3, 1)"))
+        '11%-20%'
+        Cells(outputColumn, 51).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AF$10, $F$3, 0, $F$3, 1)"))
+        '21%-30%'
+        Cells(outputColumn, 52).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AF$10, $F$3*2, 0, $F$3, 1)"))
+        '31%-40%'
+        Cells(outputColumn, 53).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AF$10, $F$3*3, 0, $F$3, 1)"))
+        '41%-50%'
+        Cells(outputColumn, 54).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AF$10, $F$3*4, 0, $F$3, 1)"))
+        '51%-60%'
+        Cells(outputColumn, 55).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AF$10, $F$3*5, 0, $F$3, 1)"))
+        '61%-70%'
+        Cells(outputColumn, 56).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AF$10, $F$3*6, 0, $F$3, 1)"))
+        '71%-80%'
+        Cells(outputColumn, 57).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AF$10, $F$3*7, 0, $F$3, 1)"))
+        '81%-90%'
+        Cells(outputColumn, 58).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AF$10, $F$3*8, 0, $F$3, 1)"))
+        '91%-100%'
+        Cells(outputColumn, 59).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($AF$10, $F$3*9, 0, $F$3, 1)"))
+        
+        'Replacement to test'
+        
+        'Control'
+        Cells(outputColumn, 61).Value = Application.Evaluate("B9")
+        '1%-10%'
+        Cells(outputColumn, 62).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($B$10, 0, 0, $F$3, 1)"))
+        '11%-20%'
+        Cells(outputColumn, 63).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($B$10, $F$3, 0, $F$3, 1)"))
+        '21%-30%'
+        Cells(outputColumn, 64).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($B$10, $F$3*2, 0, $F$3, 1)"))
+        '31%-40%'
+        Cells(outputColumn, 65).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($B$10, $F$3*3, 0, $F$3, 1)"))
+        '41%-50%'
+        Cells(outputColumn, 66).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($B$10, $F$3*4, 0, $F$3, 1)"))
+        '51%-60%'
+        Cells(outputColumn, 67).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($B$10, $F$3*5, 0, $F$3, 1)"))
+        '61%-70%'
+        Cells(outputColumn, 68).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($B$10, $F$3*6, 0, $F$3, 1)"))
+        '71%-80%'
+        Cells(outputColumn, 69).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($B$10, $F$3*7, 0, $F$3, 1)"))
+        '81%-90%'
+        Cells(outputColumn, 70).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($B$10, $F$3*8, 0, $F$3, 1)"))
+        '91%-100%'
+        Cells(outputColumn, 71).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($B$10, $F$3*9, 0, $F$3, 1)"))
+        
+        'Replacement Cost'
+        
+        'Control'
+        Cells(outputColumn, 73).Value = Application.Evaluate("H9")
+        '1%-10%'
+        Cells(outputColumn, 74).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($H$10, 0, 0, $F$3, 1)"))
+        '11%-20%'
+        Cells(outputColumn, 75).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($H$10, $F$3, 0, $F$3, 1)"))
+        '21%-30%'
+        Cells(outputColumn, 76).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($H$10, $F$3*2, 0, $F$3, 1)"))
+        '31%-40%'
+        Cells(outputColumn, 77).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($H$10, $F$3*3, 0, $F$3, 1)"))
+        '41%-50%'
+        Cells(outputColumn, 78).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($H$10, $F$3*4, 0, $F$3, 1)"))
+        '51%-60%'
+        Cells(outputColumn, 79).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($H$10, $F$3*5, 0, $F$3, 1)"))
+        '61%-70%'
+        Cells(outputColumn, 80).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($H$10, $F$3*6, 0, $F$3, 1)"))
+        '71%-80%'
+        Cells(outputColumn, 81).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($H$10, $F$3*7, 0, $F$3, 1)"))
+        '81%-90%'
+        Cells(outputColumn, 82).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($H$10, $F$3*8, 0, $F$3, 1)"))
+        '91%-100%'
+        Cells(outputColumn, 83).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($H$10, $F$3*9, 0, $F$3, 1)"))
+        
+        'Genotype Cost'
+        
+        'Control'
+        Cells(outputColumn, 85).Value = Application.Evaluate("C9")
+        '1%-10%'
+        Cells(outputColumn, 86).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($C$10, 0, 0, $F$3, 1)"))
+        '11%-20%'
+        Cells(outputColumn, 87).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($C$10, $F$3, 0, $F$3, 1)"))
+        '21%-30%'
+        Cells(outputColumn, 88).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($C$10, $F$3*2, 0, $F$3, 1)"))
+        '31%-40%'
+        Cells(outputColumn, 89).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($C$10, $F$3*3, 0, $F$3, 1)"))
+        '41%-50%'
+        Cells(outputColumn, 90).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($C$10, $F$3*4, 0, $F$3, 1)"))
+        '51%-60%'
+        Cells(outputColumn, 91).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($C$10, $F$3*5, 0, $F$3, 1)"))
+        '61%-70%'
+        Cells(outputColumn, 92).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($C$10, $F$3*6, 0, $F$3, 1)"))
+        '71%-80%'
+        Cells(outputColumn, 93).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($C$10, $F$3*7, 0, $F$3, 1)"))
+        '81%-90%'
+        Cells(outputColumn, 94).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($C$10, $F$3*8, 0, $F$3, 1)"))
+        '91%-100%'
+        Cells(outputColumn, 95).Value = Application.WorksheetFunction.Average(Application.Evaluate("OFFSET($C$10, $F$3*9, 0, $F$3, 1)"))
+        outputColumn = outputColumn + 1
+    Next i
+ 
+    Application.Calculation = xlCalculationAutomatic
+End Sub
